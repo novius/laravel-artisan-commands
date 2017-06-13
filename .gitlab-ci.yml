@@ -1,0 +1,17 @@
+image: novius/cs
+
+# https://gitlab.com/gitlab-org/gitlab-ce/issues/4431#note_12281236
+cache:
+  paths:
+    - vendor/
+    - .composercache
+
+before_script:
+  - php -v
+  - composer config cache-files-dir .composercache
+  - composer install
+
+tests:
+  script:
+    - sh ./cs.sh
+    - sh ./test.sh
