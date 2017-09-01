@@ -15,7 +15,7 @@ In your terminal:
 composer install novius/laravel-artisan-commands
 ```
 
-Then register the service provider to your `config/app.php` file:
+Then, if you are on Laravel 5.4 (no need for Laravel 5.5 and higher), register the service provider to your `config/app.php` file:
 
 ```php
 'providers' => [
