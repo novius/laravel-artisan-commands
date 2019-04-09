@@ -38,11 +38,13 @@ class Configure extends Command
         $replaces = [
             'lara_base_xxx' => $dbName,
             'lara_user_xxx' => mb_substr($dbName, 0, 16),
-            'lara_pass_xxx' => str_random(20),
+            'lara_pass_xxx' => Str::random(20),
         ];
 
         $this->writeFile('.env', $replaces);
         $this->writeFile('config/database.php', $replaces);
+
+        $this->info('DB successfully configured.');
     }
 
     protected function writeFile(string $relativeFilepath, array $replaces)

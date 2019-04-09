@@ -5,6 +5,11 @@
 
 This package contains some useful Artisan commands.
 
+## Requirements
+
+This version is compatible with Laravel >=5.7.
+
+For Laravel >=5.5.0 and <5.7 please use 0.3 version.
 
 
 ## Installation
