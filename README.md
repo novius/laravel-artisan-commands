@@ -7,7 +7,9 @@ This package contains some useful Artisan commands.
 
 ## Requirements
 
-This version is compatible with Laravel >= 6.0.
+This version is compatible with Laravel 7.0 and PHP >= 7.3.
+
+For Laravel >= 6.0 and < 7.0 please use 2.* version.
 
 For Laravel >= 5.7 and < 6.0 please use 1.* version.
 
@@ -19,7 +21,7 @@ For Laravel >=5.5.0 and < 5.7 please use 0.3 version.
 In your terminal:
 
 ```sh
-composer install novius/laravel-artisan-commands "^2.0"
+composer install novius/laravel-artisan-commands
 ```
 
 Then, if you are on Laravel 5.4 (no need for Laravel 5.5 and higher), register the service provider to your `config/app.php` file:
