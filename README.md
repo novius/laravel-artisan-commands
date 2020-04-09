@@ -21,19 +21,8 @@ For Laravel >=5.5.0 and < 5.7 please use 0.3 version.
 In your terminal:
 
 ```sh
-composer install novius/laravel-artisan-commands
+composer require novius/laravel-artisan-commands
 ```
-
-Then, if you are on Laravel 5.4 (no need for Laravel 5.5 and higher), register the service provider to your `config/app.php` file:
-
-```php
-'providers' => [
-    ...
-    Novius\ArtisanCommands\ArtisanCommandsServiceProvider::class,
-];
-```
-
-
 
 ## Usage & Features
 
