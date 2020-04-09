@@ -65,10 +65,8 @@ class Create extends Command
         // We have to clear database name config (and rollback it then), otherwise DB::unprepared() tries to connect
         // (and throw an "Unknown database" error)
         $this->changeDatabaseName('');
-        $sqlExec = DB::unprepared('CREATE DATABASE IF NOT EXISTS '.(string) $databaseName);
+        DB::unprepared('CREATE DATABASE IF NOT EXISTS '.(string) $databaseName);
         $this->changeDatabaseName($databaseName);
-
-        return $sqlExec;
     }
 
     /**
