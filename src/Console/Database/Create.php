@@ -87,10 +87,8 @@ class Create extends Command
 
     /**
      * Return complete database connection config name, using $this->connectionName.
-     *
-     * @return string
      */
-    protected function databaseConfigName() : string
+    protected function databaseConfigName(): string
     {
         return 'database.connections.'.$this->connectionName.'.database';
     }

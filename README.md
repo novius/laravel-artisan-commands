@@ -7,7 +7,9 @@ This package contains some useful Artisan commands.
 
 ## Requirements
 
-This version is compatible with Laravel 7.x|8.x|9.x and PHP >= 7.3.
+This version is compatible with Laravel 10 and PHP >= 8.1.
+
+For Laravel >= 7.0 and < 10.0 please use 3.* version.
 
 For Laravel >= 6.0 and < 7.0 please use 2.* version.
 
