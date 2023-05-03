@@ -50,6 +50,17 @@ php artisan db:create --connection=[connection]
 
 For instance, `php artisan db:create --connection=mysql` will call `config('database.connections.mysql')` to get driver, host, database name, etc.
 
+#### `db:get-name`
+
+This command print the database name for a given connection (or the current connection if not specified) :
+
+```
+php artisan db:get-name
+php artisan db:get-name --connection=dev
+```
+
+`[connection]` have to be a valid connection, defined into `config/database.php` configuration file.
+
 
 ## Testing
 
