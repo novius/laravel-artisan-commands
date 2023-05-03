@@ -17,6 +17,7 @@ class ArtisanCommandsServiceProvider extends ServiceProvider
             $this->commands([
                 Console\Database\Configure::class,
                 Console\Database\Create::class,
+                Console\Database\GetName::class,
             ]);
         }
     }

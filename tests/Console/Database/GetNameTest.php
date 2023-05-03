@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Artisan;
 use Novius\ArtisanCommands\ArtisanCommandsServiceProvider;
 use Orchestra\Testbench\TestCase;
 
-class ConfigureTest extends TestCase
+class GetNameTest extends TestCase
 {
     protected function getPackageProviders($app)
     {
@@ -22,6 +22,6 @@ class ConfigureTest extends TestCase
     {
         $commands = Artisan::all();
 
-        $this->assertArrayHasKey('db:configure', $commands);
+        $this->assertArrayHasKey('db:get-name', $commands);
     }
 }
