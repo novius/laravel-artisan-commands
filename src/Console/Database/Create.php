@@ -72,7 +72,7 @@ class Create extends Command
     /**
      * Dynamicaly change "database" key into database config, and rebound "db".
      *
-     * @param $databaseName string
+     * @param  $databaseName  string
      * @return void
      */
     protected function changeDatabaseName(string $databaseName)
