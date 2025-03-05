@@ -18,7 +18,7 @@ class GetNameTest extends TestCase
     /**
      * Does the new command db:create exist ? This doesn't check if this command actually work.
      */
-    public function testConfigureDBCommandExists()
+    public function test_configure_db_command_exists()
     {
         $commands = Artisan::all();
 

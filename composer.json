@@ -37,11 +37,11 @@
         }
     },
     "scripts": {
-        "fmt": [
+        "cs-fix": [
             "./vendor/bin/pint"
         ],
         "lint": [
-            "@composer fmt -- --test"
+            "@composer cs-fix -- --test"
         ],
         "test": [
             "phpunit"

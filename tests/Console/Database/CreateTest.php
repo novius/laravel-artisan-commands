@@ -18,7 +18,7 @@ class CreateTest extends TestCase
     /**
      * Does the new command db:create exist ? This doesn't check if this command actually work.
      */
-    public function testCreateDBCommandExists()
+    public function test_create_db_command_exists()
     {
         $commands = Artisan::all();
         $this->assertArrayHasKey('db:create', $commands);
