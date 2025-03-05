@@ -25,6 +25,24 @@ jobs:
       - name: Lint PHP code via Laravel Pint
         run: composer run-script lint
 
+  phpstan:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: PhPStan
+        run: composer run-script phpstan
+
   test-app:
     runs-on: ubuntu-latest
 

@@ -39,26 +39,30 @@ class Create extends Command
 
     /**
      * Try to create the database. We use "--connection" option to find database connection configuration.
-     *
-     * @return mixed
      */
-    public function handle()
+    public function handle(): int
     {
         // "--connection" option is required for now
         $this->connectionName = $this->option('connection');
         if ($this->connectionName === null) {
-            return $this->error('Missing required option: --connection');
+            $this->error('Missing required option: --connection');
+
+            return self::FAILURE;
         }
 
         // Does this database connection configuration exist?
         if (! config()->has($this->databaseConfigName())) {
-            return $this->error('Connection "'.$this->connectionName.'" isn\'t defined into config/database.php');
+            $this->error('Connection "'.$this->connectionName.'" isn\'t defined into config/database.php');
+
+            return self::FAILURE;
         }
 
         // Check database name validity
         $databaseName = config($this->databaseConfigName());
         if (! preg_match('`^\w+$`', $databaseName)) {
-            return $this->error($databaseName.' isn\'t a valid database name.');
+            $this->error($databaseName.' isn\'t a valid database name.');
+
+            return self::FAILURE;
         }
 
         // Create Database using PDO (we can't use Migration for this, and we can't use binding for database name)
@@ -67,6 +71,8 @@ class Create extends Command
         $this->changeDatabaseName('');
         DB::unprepared('CREATE DATABASE IF NOT EXISTS '.(string) $databaseName);
         $this->changeDatabaseName($databaseName);
+
+        return self::SUCCESS;
     }
 
     /**
