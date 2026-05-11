@@ -51,6 +51,9 @@ jobs:
           - laravel: 11.*
             testbench: 9.*
             carbon: 2.*
+        exclude:
+          - laravel: 13.*
+            php: 8.2
 
     name: phpstan - P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
@@ -96,6 +99,9 @@ jobs:
           - laravel: 11.*
             testbench: 9.*
             carbon: 2.*
+        exclude:
+          - laravel: 13.*
+            php: 8.2
 
     name: test - P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
 
